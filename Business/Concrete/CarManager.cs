@@ -25,12 +25,9 @@ namespace Business.Concrete
             {
              
                 _carDal.Add(car);
-                Console.WriteLine("The Car : " + car.Name + " was added to database with the price : "+ car.Price);
             }
 
-            else
-            
-                Console.WriteLine("NOT A VALID DATA. CHECK PRICE AND NAME OF THE CAR");
+            else  Console.WriteLine("NOT A VALID DATA. CHECK PRICE AND NAME OF THE CAR");
             
         }
 
@@ -41,13 +38,13 @@ namespace Business.Concrete
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            return _carDal.GetAll(car => car.Brand.Id == id).ToList();
+            return _carDal.GetAll(car => car.BrandId == id).ToList();
              
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
-            return _carDal.GetAll(car => car.Color.Id == id);
+            return _carDal.GetAll(car => car.ColorId == id);
         }
 
 

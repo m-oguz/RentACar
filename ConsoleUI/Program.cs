@@ -11,23 +11,28 @@ namespace ConsoleUI
         {
 
             //TEST 
-            Car car1 = new Car
+            Car car = new Car
             {
-                Id = 32,
-                Price = 310.00,
-                Brand = new Brand { Id = 12, Name = "407" },
-                Color = new Color { Id = 3, Name = "WHITE" },
-                Name = "KIA"
+                BrandId = 2,
+                ColorId = 5,
+                Id = 43,
+                Name = "Mercedes-Benz",
+                Price = 332
             };
-
             CarManager carManager = new CarManager(new EfCarDal());
+         
+            carManager.AddCar(car);
+        
 
-            carManager.AddCar(car1);
 
 
-
+            Console.WriteLine("Getting cars with brandid : 1");
+            foreach (var item in carManager.GetCarsByBrandId(1))
+            {
+                Console.WriteLine(item.Name + " " + item.Price);
+            }
+            Console.WriteLine("Got cars with brandid : 1");
 
         }
     }
 }
-    

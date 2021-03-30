@@ -11,9 +11,9 @@ namespace Entity.Concrete
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
-        public Brand Brand { get; set; }
-        public Color Color { get; set; }
+        public decimal Price { get; set; }
+        public int BrandId { get; set; }
+        public int ColorId { get; set; }
 
 
     }
